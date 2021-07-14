@@ -15,9 +15,9 @@ function ToyCard({ id, name, image, likes, onDonate }) {
     }
     fetch(`http://localhost:3001/toys/${id}`, configObj)
     .then(r => r.json())
-    .then(data => {
+    .then((data) => {
       console.log(data)
-      setCurrentLikes(currentLikes + 1)
+      setCurrentLikes(data.likes)
     })
   }
   return (
